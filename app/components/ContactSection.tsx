@@ -41,23 +41,39 @@ export default function ContactSection({ plain = false }: ContactSectionProps) {
       return;
     }
 
+    const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+
+    if (!formspreeEndpoint) {
+      setStatus({
+        message: `Formulário ainda não conectado ao provedor de email. Por enquanto, use ${contact.email} ou WhatsApp.`,
+        type: 'error'
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     setStatus({ message: 'Enviando sua mensagem...', type: 'success' });
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(formspreeEndpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, phone, company, projectType, urgency, challenge, message })
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          company,
+          projectType,
+          urgency,
+          challenge,
+          message,
+          subject: `Novo diagnóstico 4Solver: ${projectType}`
+        })
       });
-      const result = (await response.json().catch(() => null)) as { configured?: boolean } | null;
 
       if (response.ok) {
         setStatus({
-          message:
-            result?.configured === false
-              ? `Recebemos os dados na interface, mas a API ainda precisa ser conectada ao provedor de email. Por enquanto, use ${contact.email} ou WhatsApp.`
-              : 'Mensagem enviada com sucesso. Logo entraremos em contato com um caminho inicial para o diagnóstico.',
+          message: 'Mensagem enviada com sucesso. Logo entraremos em contato com um caminho inicial para o diagnóstico.',
           type: 'success'
         });
         form.reset();
