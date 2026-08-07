@@ -1,4 +1,4 @@
-import { diagnosticItems } from '../data/site';
+import { diagnosticItems, processItems } from '../data/site';
 import Icon, { type IconName } from './Icon';
 
 export default function DiagnosticSection() {
@@ -9,10 +9,10 @@ export default function DiagnosticSection() {
           <span className="eyebrow">
             <i></i> Diagnóstico 4Solver
           </span>
-          <h2>Antes de construir, entendemos onde a tecnologia realmente resolve.</h2>
+          <h2>Antes de construir, entendemos onde o processo realmente trava.</h2>
           <p>
-            Um processo curto para transformar dúvidas, planilhas e conversas soltas em um plano de automação, IA ou
-            sistema com prioridade clara.
+            Transformamos conversas, planilhas e rotinas dispersas em um mapa de prioridades, responsabilidades e
+            entregas possíveis.
           </p>
           <div className="diagnostic-cta">
             <a className="btn btn-primary" href="#contato">
@@ -34,6 +34,10 @@ export default function DiagnosticSection() {
             </article>
           ))}
         </div>
+      </div>
+      <div className="container diagnostic-process reveal">
+        <div><span className="eyebrow"><i></i> Da conversa à entrega</span><h3>Um caminho curto, com decisões visíveis.</h3></div>
+        <ol>{processItems.map((item) => <li key={item.number}><span>{item.number}</span><div><strong>{item.title}</strong><p>{item.text}</p></div></li>)}</ol>
       </div>
     </section>
   );

@@ -50,7 +50,7 @@ export default function Header() {
             </a>
           ))}
           <a href="/contato" className="nav-cta" onClick={closeMenu}>
-            Fale conosco
+            Solicitar diagnóstico
           </a>
         </div>
       </nav>

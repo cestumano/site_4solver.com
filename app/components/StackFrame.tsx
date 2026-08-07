@@ -12,7 +12,7 @@ type StackFrameStyle = CSSProperties & {
 
 export default function StackFrame({ children, compact = false, index }: StackFrameProps) {
   const style: StackFrameStyle = {
-    '--stack-top': `${96 + index * 12}px`,
+    '--stack-top': `${88 + index * 5}px`,
     zIndex: 10 + index * 10
   };
 

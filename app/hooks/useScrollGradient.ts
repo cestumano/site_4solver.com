@@ -8,13 +8,22 @@ function rgba(color: number[], alpha: number) {
   return `rgba(${Math.round(color[0])}, ${Math.round(color[1])}, ${Math.round(color[2])}, ${alpha})`;
 }
 
+const MIN_PROGRESS_DELTA = 0.004;
+
 export default function useScrollGradient() {
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const root = document.documentElement;
+    let lastProgress = -1;
 
     function updateScrollGradient() {
       const scrollable = document.documentElement.scrollHeight - window.innerHeight;
       const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+
+      if (Math.abs(progress - lastProgress) < MIN_PROGRESS_DELTA) return;
+      lastProgress = progress;
+
       const cyanToBlue = mixColor([125, 211, 252], [191, 219, 254], progress);
       const skyToCyan = mixColor([219, 234, 254], [186, 230, 253], progress);
       const softBlue = mixColor([239, 246, 255], [224, 242, 254], progress);

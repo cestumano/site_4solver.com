@@ -10,8 +10,8 @@ export default function FocusSection() {
           </span>
           <h2>Quando o processo cresceu, mas a operação continua manual.</h2>
           <p>
-            Não é sobre colocar IA em tudo. É sobre encontrar o ponto exato onde tecnologia reduz atraso, perda de
-            informação e trabalho repetido.
+            Primeiro entendemos o processo. Depois definimos se ele precisa de integração, automação, software ou
+            apenas de uma forma mais clara de organizar o trabalho.
           </p>
         </div>
 

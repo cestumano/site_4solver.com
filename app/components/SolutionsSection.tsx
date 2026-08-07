@@ -15,10 +15,10 @@ export default function SolutionsSection() {
       <div className="container">
         <div className="section-heading reveal">
           <span className="eyebrow">
-            <i></i> Entregas possíveis
+            <i></i> O que entregamos
           </span>
-          <h2>Peças de tecnologia que se encaixam na sua operação.</h2>
-          <p>Cada entrega parte do problema: atendimento, documentos, gestão, integração ou produto digital.</p>
+          <h2>Ferramentas construídas a partir do processo real.</h2>
+          <p>O formato da entrega depende do gargalo: atendimento, documentos, gestão, integração ou produto digital.</p>
         </div>
 
         <div className="solution-tabs reveal" role="tablist" aria-label="Filtrar soluções">
@@ -39,12 +39,13 @@ export default function SolutionsSection() {
         <div className="solutions-grid">
           {visibleSolutions.map((solution) => (
             <article
+              id={solution.title === 'Sistemas sob medida' ? 'produto-digital' : undefined}
               className={`solution-card ${solution.featured ? 'featured' : ''} reveal ${solution.delay ?? ''}`.trim()}
               key={solution.title}
             >
               {solution.featured ? (
                 <>
-                  <span className="tag">Solução em destaque</span>
+                  <span className="tag">Atendimento e operação</span>
                   <div className="solution-mark">
                     <Icon name={solution.icon as IconName} size={24} />
                   </div>
@@ -54,9 +55,11 @@ export default function SolutionsSection() {
                   <Icon name={solution.icon as IconName} size={30} />
                 </div>
               )}
-              <h3>{solution.title}</h3>
-              <p>{solution.text}</p>
-              {solution.cta ? <a href="#contato">{solution.cta}</a> : null}
+              <div className="solution-content">
+                <h3>{solution.title}</h3>
+                <p>{solution.text}</p>
+                <a href={`/solucoes/${solution.slug}`}>Conhecer solução →</a>
+              </div>
             </article>
           ))}
         </div>

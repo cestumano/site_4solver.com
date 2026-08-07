@@ -2,14 +2,15 @@ import { cases } from '../data/site';
 
 export default function CasesSection() {
   return (
-    <section className="section cases-section screen-section" id="cases" data-section="cases">
+    <section className="section cases-section screen-section" id="cenarios" data-section="cenarios">
       <div className="container">
         <div className="section-heading reveal">
           <span className="eyebrow">
-            <i></i> Antes e depois
+            <i></i> Cenários de transformação
           </span>
-          <h2>O premium está no processo ficando claro.</h2>
-          <p>Alguns exemplos de como a 4Solver estrutura uma operação antes de escrever código.</p>
+          <h2>Tecnologia funciona melhor quando o processo vem primeiro.</h2>
+          <p>Exemplos ilustrativos de como operações manuais podem ser estruturadas antes da implementação tecnológica.</p>
+          <span className="scenario-note">Cenários ilustrativos — não representam resultados de clientes.</span>
         </div>
 
         <div className="case-grid">
@@ -22,6 +23,7 @@ export default function CasesSection() {
                   <strong>Antes</strong>
                   <p>{item.before}</p>
                 </div>
+                <span className="case-direction" aria-hidden="true">→</span>
                 <div>
                   <strong>Depois</strong>
                   <p>{item.after}</p>

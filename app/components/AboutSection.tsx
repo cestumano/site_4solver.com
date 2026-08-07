@@ -6,20 +6,19 @@ export default function AboutSection() {
     <section className="section about-section screen-section" id="sobre" data-section="sobre">
       <div className="container about-grid">
         <div className="about-visual reveal">
-          <Image src="/assets/logo-4solver.jpeg" alt="Logo oficial 4Solver" width={520} height={520} />
+          <Image src="/assets/logo-4solver-full.png" alt="Logo oficial 4Solver" width={520} height={520} />
         </div>
         <div className="about-copy reveal delay-1">
           <span className="eyebrow">
-            <i></i> Sobre a 4Solver
+            <i></i> Como construímos
           </span>
-          <h2>Tecnologia desenhada perto da operação.</h2>
+          <h2>Soluções preparadas para evoluir com a operação.</h2>
           <p>
-            A 4Solver combina IA, automação, software, dados e estratégia para resolver gargalos que aparecem no
-            atendimento, na gestão e na rotina de equipes.
+            Partimos do entendimento do processo, das pessoas e dos dados envolvidos para definir uma solução viável,
+            sem adicionar complexidade desnecessária.
           </p>
           <p>
-            Nossa missão é tirar processos do improviso e transformar ideias em ferramentas usáveis, com começo simples
-            e evolução clara.
+            Projetamos sistemas resilientes, monitoráveis e preparados para evoluir conforme a operação cresce.
           </p>
           <div className="about-pills">
             {aboutPills.map((pill) => (

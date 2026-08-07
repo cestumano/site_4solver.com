@@ -9,7 +9,7 @@ export default function ProcessSection() {
             <i></i> Como trabalhamos
           </span>
           <h2>Do problema ao produto funcionando.</h2>
-          <p>Organizamos a ideia, desenhamos a solução e entregamos tecnologia com foco em uso real.</p>
+          <p>Começamos pelo menor escopo que permita colocar a ferramenta em uso, aprender e evoluir com segurança.</p>
         </div>
 
         <div className="timeline">

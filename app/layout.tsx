@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import type { ReactNode } from 'react';
 import { contact } from './data/site';
+import WhatsAppButton from './components/WhatsAppButton';
+import Analytics from './components/Analytics';
 import './globals.css';
 
 const inter = Inter({
@@ -20,9 +22,9 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://4solver.com.br'),
-  title: '4Solver | Tecnologia, IA e automação para negócios reais',
+  title: '4Solver | Software e automação de processos para empresas',
   description:
-    '4Solver: soluções inteligentes com IA, automação, dashboards, sistemas, APIs, chatbots e tecnologia para empresas.',
+    'Organize processos, integre dados e transforme ideias em produtos digitais com a 4Solver. Software, automação, APIs e painéis de gestão.',
   keywords: [
     'IA',
     'automação',
@@ -35,20 +37,20 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: '4Solver' }],
   openGraph: {
-    title: '4Solver | Tecnologia, IA e automação para negócios reais',
+    title: '4Solver | Software e automação para empresas',
     description:
-      'IA, automação e sistemas sob medida para atendimento, condomínios, operações internas e projetos sustentáveis.',
-    images: ['/assets/logo-4solver.jpeg'],
+      'Software, automação e integrações para atendimento, operações internas e projetos sustentáveis.',
+    images: ['/assets/logo-4solver-full.png'],
     type: 'website'
   },
   twitter: {
     card: 'summary_large_image',
-    title: '4Solver | Tecnologia e IA',
-    description: 'Soluções digitais inteligentes para empresas',
-    images: ['/assets/logo-4solver.jpeg']
+    title: '4Solver | Software para operações reais',
+    description: 'Processos organizados, sistemas integrados e operações rastreáveis.',
+    images: ['/assets/logo-4solver-full.png']
   },
   icons: {
-    icon: '/assets/logo-4solver.jpeg'
+    icon: '/assets/logo-4solver-icon-160.png'
   }
 };
 
@@ -57,13 +59,13 @@ const organizationSchema = {
   '@type': 'Organization',
   name: '4Solver',
   url: 'https://4solver.com.br',
-  logo: 'https://4solver.com.br/assets/logo-4solver.jpeg',
-  description: 'Soluções inteligentes com IA, automação, dashboards, sistemas e tecnologia para empresas',
-  sameAs: ['https://linkedin.com/company/4solver', 'https://www.instagram.com/4solver'],
+  logo: 'https://4solver.com.br/assets/logo-4solver-full.png',
+  description: 'Desenvolvimento de software, automação, integrações, painéis e sistemas para empresas',
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'Customer Support',
     email: contact.email,
+    telephone: '+55 82 98785-1090',
     url: contact.whatsappUrl
   },
   address: {
@@ -77,6 +79,8 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
     <html lang="pt-BR" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body>
         {children}
+        <WhatsAppButton />
+        <Analytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
