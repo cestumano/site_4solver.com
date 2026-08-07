@@ -499,7 +499,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: 'Fábio Linhares', role: 'Cofundador',
-    bio: 'Pesquisador (PPGI/UFAL) em otimização e pesquisa operacional, com trabalho científico em roteirização logística. Atua na estruturação de soluções logísticas e operacionais da 4Solver.',
+    bio: 'Fábio Linhares é Mestrando em Informática, Cientista de Dados, Especialista em Inteligência Artificial e Aprendizado de Máquina e pesquisador em Ciência da Computação. Atua no desenvolvimento de soluções em IA, ciência de dados, visão computacional e automação inteligente, integrando pesquisa científica e engenharia de software para transformar dados em soluções inovadoras. Na 4Solver, atua em projetos voltados à criação de tecnologias que aumentam a eficiência operacional, apoiam a tomada de decisão e geram valor para empresas e instituições.',
     image: '/assets/team/fabio-linhares.jpeg'
   },
   {
