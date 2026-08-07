@@ -1842,6 +1842,18 @@ p { color: var(--muted); line-height: 1.8; letter-spacing: .3px; }
   margin-right: auto;
 }
 
+.route-hero.compact h1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.route-hero.compact .about-pills {
+  justify-content: center;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .route-hero-grid {
   display: grid;
   grid-template-columns: 1.05fr .95fr;
@@ -2436,9 +2448,10 @@ p { letter-spacing: 0; }
 .team-grid { gap: 18px; }
 .team-grid article { border-radius: 16px; box-shadow: none; }
 .team-grid img { aspect-ratio: 4 / 5.2; }
-.team-card-copy { padding: 24px; }
+.team-card-copy { display: flex; min-height: 260px; flex-direction: column; padding: 24px; }
 .team-card-copy h3 { font-size: 1.45rem; }
 .team-card-copy p { font-size: .9rem; line-height: 1.65; }
+.team-card-copy a { margin-top: auto; padding-top: 15px; }
 
 .project-flow { position: relative; gap: 10px; }
 .project-flow::before { content: ""; position: absolute; top: 49px; left: 8%; right: 8%; height: 2px; background: linear-gradient(90deg, var(--green), var(--cyan)); opacity: .25; }
@@ -2481,6 +2494,11 @@ p { letter-spacing: 0; }
   .whatsapp-float { width: 48px; min-width: 48px; padding: 0; justify-content: center; }
   .whatsapp-float span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .contact-form { padding: 20px; }
+  .route-hero.compact { text-align: left; }
+  .route-hero.compact h1,
+  .route-hero.compact p { margin-left: 0; margin-right: 0; }
+  .route-hero.compact .about-pills { justify-content: flex-start; margin-left: 0; margin-right: 0; }
+  .team-card-copy { min-height: 0; }
 }
 
 /* BioSolver — identidade extraída da apresentação institucional */
